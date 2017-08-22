@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Table Data Addition</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <table id="table" data-height="122">
+        <thead>
+            <tr>
+                <th data-field="id">Item ID</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+</body>
+<script>
+
+	
+var data = [
+    {
+        "id": 0,
+        "name": "test0",
+        "price": "$0"
+    },
+    {
+        "id": 1,
+        "name": "test1",
+        "price": "$1"
+    }
+];
+
+function getData(){
+//	var e = document.getElementById("JobTitles");
+//	var strUsr = e.options[e.selectedIndex].value;
+//	$.get('/getScatter1/'+strUsr, function(results) {
+		console.log("got the data!! - 2");
+//		salarydata = results;
+//		gochart(strUsr);
+		
+	});
+}
+
+getData();
+    $('#table').bootstrapTable({    	
+        data: data;
+    });
+});
+
+
+</script>
+</html>

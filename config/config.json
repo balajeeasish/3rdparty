@@ -1,0 +1,20 @@
+{
+	"BSA":
+	{
+	    "username" : "bstuser",
+	    "password" : "Biostorage!",    
+	      
+	    "planeURL":"https://bioinventory.biostorage.com/api/DEMO/v1/sample",    
+	 
+	    "shipmentAPI":"https://bioinventory.biostorage.com/api/v1/shipment",
+	 
+	    "urlProdGET":"https://bioinventory.biostorage.com/api/v1/sample",
+	    
+	    "bioGETURL":"https://bioinventory.biostorage.com/api/v1/sample?dataElement=originating_id&value=ABlood234&isPartialResult=true"
+	},
+	
+	"fileSourceLocation":
+	{
+		"fileLocation" : "../monitorLocation"
+	}
+}

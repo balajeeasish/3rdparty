@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Table Data Addition</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/vue.table/1.5.3/vue-table.min.js"></script>
+</head>
+<body>
+	   <div id="app" class="ui vertical stripe segment">
+        <div class="ui container">
+            <div id="content" class="ui basic segment">                
+                <vuetable
+                    api-url="http://localhost:3000/bsa/getSampleData/"
+                    table-wrapper="#content"
+                    :fields="columns"                    
+                ></vuetable>
+            </div>
+        </div>
+    </div>
+</body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				columns: [
+					'bst_registration',
+					'originating_id',
+					'sample_id',
+					'Precip Removal Step 1',
+					'Precip Removal Step 2',
+					'location',
+					'__actions'					
+				]	        
+	        },
+	        methods: {
+	            viewProfile: function(id) {
+	                console.log('view profile with id:', id)
+	            }
+	        },
+	        events: {
+	            'vuetable:action': function(action, data) {
+	                console.log('vuetable:action', action, data)
+	                if (action == 'view-item') {
+	                    this.viewProfile(data.id)
+	                }
+	            },
+	            'vuetable:load-error': function(response) {
+	                console.log('Load Error: ', response)
+	            }
+	        }
+        })
+	</script>	
+</html>
